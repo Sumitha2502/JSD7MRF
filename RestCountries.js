@@ -18,7 +18,6 @@ console.log(country_names)
 var population= countryData.filter((ele)=>ele.population < 200000)
 var countryNames=population.map((ele)=>ele.name)
 console.log(countryNames)
-}
 
 
 // c) Print the following details name, capital, flag, using forEach function
@@ -26,26 +25,29 @@ console.log(countryNames)
 countryData.forEach((element) => console.log(element.name.common,element.capital,element.flag))
     
 
-
 // d) Print the total population of countries using reduce function
 
 var total_pop = countryData.reduce((acc,cv)=> acc+cv.population,0)
 console.log("Total population of countries :",total_pop)
 
 
-
 // e) Print the country that uses US dollars as currency
+
+//optionalchaining ?
+var US_Dollar = countryData.filter((ele)=>ele.currencies?.USD?.name === 'United States dollar')
+var countryNam= US_Dollar.map((ele)=> ele.name.common)
+console.log(countryNam)
+}
+
+
+// for of method
 
 // for (let j of countryData) {
 //     if (j.currencies && j.currencies.USD) {
 //       console.log(j.name.common, "uses US dollars");
 //     }}
 
-//optionalchaining ?
-var US_Dollar = countryData.filter((ele)=>ele.currencies?.USD?.name === 'United States dollar')
-var countryNam= US_Dollar.map((ele)=> ele.name.common)
-console.log(countryNam)
-
+// forEach method
 // let usDollarCountries = res.filter((country) => {
 //     return country.currencies && country.currencies.USD;
 //   });
@@ -53,4 +55,3 @@ console.log(countryNam)
 //   console.log(country.name.common);
 //   });
 
-//he
