@@ -52,3 +52,5 @@ console.log(countryNam)
 //   usDollarCountries.forEach(country => {
 //   console.log(country.name.common);
 //   });
+
+//he
